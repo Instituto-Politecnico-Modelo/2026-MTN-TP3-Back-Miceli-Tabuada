@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30189767-67d4-4744-9745-b18474b36ee7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backEnd/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="30189767-67d4-4744-9745-b18474b36ee7" name="Changes" comment="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +55,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000000000157607" />
+      <entry key="S5" value="1.0001190492600502" />
+      <entry key="S10" value="1.0343778114133266" />
+      <entry key="S30" value="3.0378095032137917" />
+      <entry key="S60" value="7.6679929470765185" />
+      <entry key="M2" value="14.238138634582539" />
+      <entry key="M5" value="21.91147979948984" />
+      <entry key="M10" value="25.569087484588184" />
+      <entry key="M15" value="26.951785835039068" />
+      <entry key="M30" value="28.4264640121066" />
+      <entry key="H1" value="29.200423945186746" />
+      <entry key="H2" value="29.59695168781602" />
+      <entry key="H4" value="29.797653365719956" />
+      <entry key="D1" value="29.96616069337108" />
+      <entry key="W1" value="29.995162991941754" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9659363289248456" />
+      <entry key="MS500" value="0.9930924954370359" />
+      <entry key="S2" value="0.9982686326131281" />
+      <entry key="S5" value="0.9994260624164527" />
+      <entry key="S10" value="1.034019370736047" />
+      <entry key="S30" value="3.0374414708525226" />
+      <entry key="S60" value="7.667459615261757" />
+      <entry key="M2" value="14.237570674143228" />
+      <entry key="M5" value="21.911093086039315" />
+      <entry key="M10" value="25.568853746284965" />
+      <entry key="M15" value="26.951619624272983" />
+      <entry key="M30" value="28.426375312047245" />
+      <entry key="H1" value="29.200378115949956" />
+      <entry key="H2" value="29.596928392851787" />
+      <entry key="H4" value="29.7976416218024" />
+      <entry key="D1" value="29.96615872254171" />
+      <entry key="W1" value="29.995162710062328" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 4
@@ -86,7 +138,10 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -105,10 +160,23 @@
       <option name="presentableId" value="Default" />
       <updated>1779799907926</updated>
     </task>
+    <task id="LOCAL-00001" summary="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53">
+      <option name="closed" value="true" />
+      <created>1779800489497</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1779800489497</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
