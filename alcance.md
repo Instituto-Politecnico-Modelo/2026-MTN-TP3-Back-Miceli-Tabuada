@@ -10,8 +10,7 @@ Desarrollar una plataforma integral para la gestión de complejos de fútbol 5, 
 
 ---
 
-## 🛠️ Stack Tecnológico (Obligatorio)
-
+## 🛠️ Stack Tecnológico
 De acuerdo a las consignas del TP, el sistema se desarrollará con las siguientes tecnologías:
 
 | Capa | Tecnología |
@@ -51,15 +50,3 @@ Los siguientes aspectos quedan **fuera del alcance** de esta etapa:
 * No se contempla la subida de multimedia a la página.
 * No se tendrá en cuenta la implementación de la tienda online de camisetas.
 
----
-
-## 📅 Cronograma de Entregas
-
-| Fecha | Entregable |
-|-------|-----------|
-| **30 de Marzo** | Documentación inicial: Alcance, Kanban y Modelo de Clases |
-| **06 de Abril** | Correcciones finales y Modelo Físico de Datos |
-
----
-
-> **Nota:** Este proyecto se encuentra en etapa de documentación. No se debe comenzar el desarrollo de código hasta la aprobación de los entregables de la primera fecha.
