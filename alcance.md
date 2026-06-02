@@ -1,12 +1,12 @@
 # 🚀 Proyecto Futbol5Ya - Documento de Alcance
 
-Este documento detalla los límites, requerimientos y tecnologías del sistema **Futbol5Ya** para la Etapa 1 del TP3, tomando como base el enunciado "Email de Cliente".
+Este documento detalla los límites, requerimientos y tecnologías del sistema **Futbol5Ya** para el TP3, tomando como base el enunciado "Email de Cliente".
 
 ---
 
 ## 📋 Objetivo General
 
-Desarrollar una plataforma integral para la gestión de complejos de fútbol 5, permitiendo la administración de turnos, venta de artículos deportivos y visualización de contenido multimedia, orientada tanto a clientes como a administradores del complejo.
+Desarrollar una plataforma integral para la gestión de complejos de fútbol 5, permitiendo la administración de turnos,  orientada tanto a clientes como a administradores del complejo.
 
 ---
 
@@ -27,9 +27,8 @@ De acuerdo a las consignas del TP, el sistema se desarrollará con las siguiente
 El sistema incluirá los siguientes módulos:
 
 ### 🔐 Seguridad y Usuarios
-* Registro e inicio de sesión de usuarios.
 * **Autenticación obligatoria** en todos los módulos mediante JWT.
-* Roles diferenciados: cliente y administrador.
+* Roles diferenciados: cliente y administrador (y más si son necesarios)
 
 ### 🏟️ Gestión de Turnos (Reserva de Canchas)
 * Visualización de disponibilidad de canchas en tiempo real.
