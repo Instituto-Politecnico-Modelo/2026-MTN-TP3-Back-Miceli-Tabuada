@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30189767-67d4-4744-9745-b18474b36ee7" name="Changes" comment="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53">
+    <list default="true" id="30189767-67d4-4744-9745-b18474b36ee7" name="Changes" comment="ajuste alcance.md poniendo un objetivo mas claro, una descripcion adaptada y aclarando requerimietos - closes #54 #55 #56">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/alcance.md" beforeDir="false" afterPath="$PROJECT_DIR$/alcance.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,59 +61,59 @@
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0000001069767044" />
-      <entry key="S10" value="1.0003270729398288" />
-      <entry key="S30" value="1.0696329492439642" />
-      <entry key="S60" value="1.3634582761663478" />
-      <entry key="M2" value="3.0915470072827214" />
-      <entry key="M5" value="13.784617193948675" />
-      <entry key="M10" value="30.1445180318869" />
-      <entry key="M15" value="40.79512162626653" />
-      <entry key="M30" value="56.47304773497479" />
-      <entry key="H1" value="67.02121590454105" />
-      <entry key="H2" value="73.17093616266548" />
-      <entry key="H4" value="76.49557734070657" />
-      <entry key="D1" value="79.40299745494393" />
-      <entry key="W1" value="79.91439120704202" />
+      <entry key="S2" value="1.000000001117824" />
+      <entry key="S5" value="1.0006262955737608" />
+      <entry key="S10" value="1.0667103809294445" />
+      <entry key="S30" value="2.8584492350023867" />
+      <entry key="S60" value="5.4685893331764905" />
+      <entry key="M2" value="7.989363541495599" />
+      <entry key="M5" value="10.168163201528834" />
+      <entry key="M10" value="11.098311648671167" />
+      <entry key="M15" value="11.977137759657895" />
+      <entry key="M30" value="18.70341910127773" />
+      <entry key="H1" value="35.62700229824169" />
+      <entry key="H2" value="55.782779407955076" />
+      <entry key="H4" value="71.55504266627254" />
+      <entry key="D1" value="88.95266524206617" />
+      <entry key="W1" value="92.40902205705035" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
-      <entry key="S2" value="8.018068684788627E-105" />
-      <entry key="S5" value="2.849604299695665E-42" />
-      <entry key="S10" value="2.2680267958048155E-21" />
-      <entry key="S30" value="2.0595429349906734E-7" />
-      <entry key="S60" value="6.407680378000041E-4" />
-      <entry key="M2" value="0.03578409417539066" />
-      <entry key="M5" value="0.39999253313599853" />
-      <entry key="M10" value="0.8944043813338804" />
-      <entry key="M15" value="1.1695830078682417" />
-      <entry key="M30" value="1.5294304857604593" />
-      <entry key="H1" value="1.7489591829930489" />
-      <entry key="H2" value="1.8702720605432417" />
-      <entry key="H4" value="1.9340485803309801" />
-      <entry key="D1" value="1.988853945132442" />
-      <entry key="W1" value="1.9984038899855183" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="1.1582488474357318E-185" />
+      <entry key="S30" value="3.5466806202880993E-62" />
+      <entry key="S60" value="2.659049710355382E-31" />
+      <entry key="M2" value="7.289585531730332E-16" />
+      <entry key="M5" value="1.3355403306752205E-6" />
+      <entry key="M10" value="0.0016343176824791302" />
+      <entry key="M15" value="0.017480992687132175" />
+      <entry key="M30" value="0.1869809074498687" />
+      <entry key="H1" value="0.6115238989389203" />
+      <entry key="H2" value="1.1059147902142066" />
+      <entry key="H4" value="1.487222060167604" />
+      <entry key="D1" value="1.9036523143401924" />
+      <entry key="W1" value="1.985943097662351" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9726549474122855" />
-      <entry key="MS500" value="0.9944701686732144" />
-      <entry key="S2" value="0.9986146661010289" />
-      <entry key="S5" value="0.9994457428006083" />
-      <entry key="S10" value="1.000049625869159" />
-      <entry key="S30" value="1.069524523092444" />
-      <entry key="S60" value="1.363987935015581" />
-      <entry key="M2" value="3.126733008970158" />
-      <entry key="M5" value="14.182341319704406" />
-      <entry key="M10" value="31.03633418648418" />
-      <entry key="M15" value="41.96240957385427" />
-      <entry key="M30" value="58.000942440392244" />
-      <entry key="H1" value="68.76928445926234" />
-      <entry key="H2" value="75.04072830763869" />
-      <entry key="H4" value="78.42937677056979" />
-      <entry key="D1" value="81.39180854951405" />
-      <entry key="W1" value="81.9127889424035" />
+      <entry key="MS100" value="0.9659363289248456" />
+      <entry key="MS500" value="0.9930924954370359" />
+      <entry key="S2" value="0.9982686337119676" />
+      <entry key="S5" value="0.9999324350079253" />
+      <entry key="S10" value="1.0663077924052726" />
+      <entry key="S30" value="2.8577856606563707" />
+      <entry key="S60" value="5.4678678524416915" />
+      <entry key="M2" value="7.9888143189831995" />
+      <entry key="M5" value="10.167879669977784" />
+      <entry key="M10" value="11.099785740770372" />
+      <entry key="M15" value="11.994477642723858" />
+      <entry key="M30" value="18.890157039251825" />
+      <entry key="H1" value="36.23818655355846" />
+      <entry key="H2" value="56.88839608188346" />
+      <entry key="H4" value="73.04206590145742" />
+      <entry key="D1" value="90.85627532451737" />
+      <entry key="W1" value="94.39495886431094" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -136,6 +135,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.BackEndApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "copilot.sensitive.folder.allow.file_read./home/Alumno26_MICELI_Francisco@ipm_edu/school/2026-MTN-TP3-docs-Miceli-Tabuada/backEnd/src/main/java/com/example/backEnd/Controller": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -172,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779800489497</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ajuste alcance.md poniendo un objetivo mas claro, una descripcion adaptada y aclarando requerimietos - closes #54 #55 #56">
+      <option name="closed" value="true" />
+      <created>1780406708227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780406708227</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +188,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualice credenciales de bdd(para compu de fran) y actualicé la estructura del proyecto - closes #53" />
+    <MESSAGE value="ajuste alcance.md poniendo un objetivo mas claro, una descripcion adaptada y aclarando requerimietos - closes #54 #55 #56" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste alcance.md poniendo un objetivo mas claro, una descripcion adaptada y aclarando requerimietos - closes #54 #55 #56" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
