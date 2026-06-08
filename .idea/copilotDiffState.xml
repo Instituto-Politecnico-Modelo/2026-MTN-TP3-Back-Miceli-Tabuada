@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/README.md" />
+              <option name="updatedContent" value="# ⚽ TP3 - Backend (Spring Boot)&#10;&#10;![Estado](https://img.shields.io/badge/Estado-En%20progreso-orange?style=for-the-badge)&#10;![Backend](https://img.shields.io/badge/Backend-Spring%20Boot-6DB33F?style=for-the-badge&amp;logo=springboot&amp;logoColor=white)&#10;![Java](https://img.shields.io/badge/Java-17-007396?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white)&#10;![Puerto](https://img.shields.io/badge/Puerto-8081-blue?style=for-the-badge)&#10;![TP3](https://img.shields.io/badge/Proyecto-TP3-purple?style=for-the-badge)&#10;&#10;Backend del proyecto **TP3**, desarrollado con **Spring Boot**.&#10;&#10;&gt;  **Este proyecto está en progreso** y puede cambiar con frecuencia.&#10;&#10;##  Descripción&#10;&#10;Este repositorio contiene la API backend del trabajo práctico.&#10;La aplicación expone servicios REST y está pensada para integrarse con el frontend en React + Vite.&#10;&#10;##  Frontend relacionado&#10;&#10;- Repositorio frontend (React + Vite):&#10;  - https://github.com/Instituto-Politecnico-Modelo/2026-MTN-TP3-Front-Miceli-Tabuada&#10;&#10;##  Puerto de ejecución&#10;&#10;La aplicación corre en el puerto:&#10;&#10;- `8081`&#10;&#10;##  Docker&#10;&#10;Este proyecto incluye dos opciones básicas:&#10;&#10;- `Dockerfile` (multi-stage)&#10;- `Dockerfile.single` (single-stage)&#10;&#10;### Build con Dockerfile (multi-stage)&#10;&#10;```bash&#10;docker build -t tp3-backend:latest -f Dockerfile .&#10;```&#10;&#10;### Build con Dockerfile.single (single-stage)&#10;&#10;```bash&#10;docker build -t tp3-backend:single -f Dockerfile.single .&#10;```&#10;&#10;### Run (ejemplo)&#10;&#10;```bash&#10;docker run -p 8081:8081 tp3-backend:latest&#10;```&#10;&#10;##  Equipo&#10;&#10;### Estudiantes&#10;&#10;- Francisco Miceli&#10;- Lorenzo Tabuada&#10;&#10;### Docentes&#10;&#10;- Nicolás Pruscino&#10;- Martín Barbieri&#10;- Magali Cristobo&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/backEnd/.dockerignore">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/backEnd/.dockerignore" />
+              <option name="updatedContent" value="target/&#10;.git/&#10;.gitignore&#10;*.md&#10;.mvn/&#10;mvnw&#10;mvnw.cmd&#10;.idea/&#10;*.iml&#10;*.log&#10;.DS_Store&#10;.env&#10;*.class&#10;*.jar&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/backEnd/Dockerfile">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/backEnd/Dockerfile" />
+              <option name="updatedContent" value="# Multi-stage Dockerfile&#10;# Stage 1: Build with Maven&#10;FROM maven:3.9-eclipse-temurin-17 AS builder&#10;WORKDIR /build&#10;COPY pom.xml .&#10;COPY src/ src/&#10;RUN mvn clean package -DskipTests&#10;&#10;# Stage 2: Runtime with lightweight JRE&#10;FROM eclipse-temurin:21-jre-alpine&#10;WORKDIR /app&#10;COPY --from=builder /build/target/backEnd-*.jar app.jar&#10;EXPOSE 8081&#10;ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/backEnd/Dockerfile.single">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/backEnd/Dockerfile.single" />
+              <option name="updatedContent" value="# Single-stage Dockerfile with full JDK&#10;FROM eclipse-temurin:21-jdk-alpine&#10;WORKDIR /app&#10;COPY pom.xml .&#10;COPY src/ src/&#10;COPY mvnw .&#10;COPY mvnw.cmd .&#10;COPY .mvn/ .mvn/&#10;RUN apk add --no-cache maven &amp;&amp; \&#10;    mvn clean package -DskipTests &amp;&amp; \&#10;    mv target/backEnd-*.jar app.jar&#10;EXPOSE 8081&#10;ENTRYPOINT [&quot;java&quot;, &quot;-jar&quot;, &quot;app.jar&quot;]&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
