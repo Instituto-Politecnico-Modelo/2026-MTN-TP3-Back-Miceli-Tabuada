@@ -137,6 +137,13 @@ public class UsuarioService implements UserDetailsService {
         return usuarioRepository.findByRol(Rol.CLIENTE, pageable).map(this::toDTO);
     }
 
+    public List<com.example.backEnd.DTO.reserva.ReservaResponseDTO> findReservasByUsuarioId(
+            Long usuarioId, com.example.backEnd.Repository.ReservaRepository reservaRepository,
+            com.example.backEnd.Service.ReservaService reservaService) {
+        return reservaRepository.findByUsuarioIdOrderByFechaDesc(usuarioId)
+                .stream().map(reservaService::toDTO).collect(Collectors.toList());
+    }
+
     // ── Mapeo ─────────────────────────────────────────────────────────────────
     public UsuarioResponseDTO toDTO(Usuario u) {
         return new UsuarioResponseDTO(
