@@ -32,7 +32,7 @@ public class DataSeeder implements CommandLineRunner {
         String adminEmail = "admin@futya.com";
         if (!usuarioRepository.existsByEmail(adminEmail)) {
             Usuario admin = new Usuario(
-                    0,
+                    "00000000",
                     "Admin",
                     "FutYa",
                     adminEmail,
