@@ -1,47 +1,38 @@
 package com.example.backEnd.Controller;
 
-import com.example.backEnd.DTO.LoginRequestDTO;
-import com.example.backEnd.Entidad.Usuario;
-import com.example.backEnd.Repository.UsuarioRepository;
-import com.example.backEnd.Security.JwtUtil;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import com.example.backEnd.DTO.auth.AuthResponseDTO;
+import com.example.backEnd.DTO.auth.LoginRequestDTO;
+import com.example.backEnd.DTO.auth.RegistroRequestDTO;
+import com.example.backEnd.DTO.UsuarioResponseDTO;
+import com.example.backEnd.Service.UsuarioService;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@Tag(name = "Autenticación", description = "Login y generación de JWT")
 public class AuthController {
 
-    private final UsuarioRepository usuarioRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final JwtUtil jwtUtil;
+    private final UsuarioService usuarioService;
 
-    public AuthController(UsuarioRepository usuarioRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
-        this.usuarioRepository = usuarioRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtUtil = jwtUtil;
+    public AuthController(UsuarioService usuarioService) {
+        this.usuarioService = usuarioService;
     }
 
-    @Operation(summary = "Iniciar sesión y obtener token JWT")
+    @PostMapping("/registro")
+    public ResponseEntity<UsuarioResponseDTO> registro(@Valid @RequestBody RegistroRequestDTO dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.registrar(dto));
+    }
+
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequestDTO dto) {
-        Usuario usuario = usuarioRepository.findByEmail(dto.getEmail())
-                .orElseThrow(() -> new RuntimeException("Credenciales inválidas."));
+    public ResponseEntity<AuthResponseDTO> login(@Valid @RequestBody LoginRequestDTO dto) {
+        return ResponseEntity.ok(usuarioService.login(dto));
+    }
 
-        if (!passwordEncoder.matches(dto.getPassword(), usuario.getPassword())) {
-            return ResponseEntity.status(401).body(Map.of("error", "Credenciales inválidas."));
-        }
-
-        String token = jwtUtil.generarToken(usuario.getEmail(), usuario.getRol().name());
-        return ResponseEntity.ok(Map.of(
-                "token", token,
-                "rol", usuario.getRol().name(),
-                "nombre", usuario.getNombre()
-        ));
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout() {
+        // JWT es stateless: el cliente descarta el token
+        return ResponseEntity.noContent().build();
     }
 }
