@@ -38,7 +38,7 @@ class UsuarioServiceTest {
 
     private UsuarioRequestDTO buildDTO() {
         UsuarioRequestDTO dto = new UsuarioRequestDTO();
-        dto.setDni(12345678);
+        dto.setDni("12345678");
         dto.setNombre("Juan");
         dto.setApellido("Pérez");
         dto.setEmail("juan@mail.com");
@@ -49,7 +49,7 @@ class UsuarioServiceTest {
     }
 
     private Usuario buildUsuario() {
-        Usuario u = new Usuario(12345678, "Juan", "Pérez", "juan@mail.com", "encodedPass", "1122334455", Rol.CLIENTE);
+        Usuario u = new Usuario("12345678", "Juan", "Pérez", "juan@mail.com", "encodedPass", "1122334455", Rol.CLIENTE);
         u.setId(1L);
         return u;
     }
@@ -128,7 +128,8 @@ class UsuarioServiceTest {
         when(usuarioRepository.existsById(1L)).thenReturn(true);
         doNothing().when(usuarioRepository).deleteById(1L);
 
-        assertDoesNotThrow(() -> usuarioService.eliminarUsuario(1L));
+        usuarioService.eliminarUsuario(1L);
+
         verify(usuarioRepository, times(1)).deleteById(1L);
     }
 
