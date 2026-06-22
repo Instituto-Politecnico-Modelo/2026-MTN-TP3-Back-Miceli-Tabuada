@@ -1,14 +1,17 @@
-# Single-stage Dockerfile with full JDK
-FROM eclipse-temurin:21-jdk-alpine
+# Single-stage Dockerfile — útil para debug local (no para producción)
+FROM eclipse-temurin:17-jdk-alpine
+
+RUN addgroup -S app && adduser -S app -G app
+
 WORKDIR /app
+COPY mvnw mvnw.cmd ./
+COPY .mvn/ .mvn/
 COPY pom.xml .
 COPY src/ src/
-COPY mvnw .
-COPY mvnw.cmd .
-COPY .mvn/ .mvn/
-RUN apk add --no-cache maven && \
-    mvn clean package -DskipTests && \
-    mv target/backEnd-*.jar app.jar
+
+RUN chmod +x mvnw && chown -R app:app /app
+
+USER app
 EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["./mvnw", "spring-boot:run"]
 
