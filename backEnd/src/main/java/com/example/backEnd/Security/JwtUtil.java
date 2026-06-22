@@ -2,6 +2,7 @@ package com.example.backEnd.Security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -10,39 +11,56 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private static final String SECRET = "futbol5ya-secret-key-2026-muy-segura!!";
-    private static final long EXPIRATION_MS = 86400000; // 24 horas
+    private final Key key;
+    private final long expirationMs;
 
-    private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
+    public JwtUtil(@Value("${jwt.secret}") String secret,
+                   @Value("${jwt.expiration-ms}") long expirationMs) {
+        this.key = Keys.hmacShaKeyFor(secret.getBytes());
+        this.expirationMs = expirationMs;
+    }
 
-    public String generarToken(String email, String rol) {
+    public String generateToken(String email, String rol) {
         return Jwts.builder()
                 .setSubject(email)
                 .claim("rol", rol)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_MS))
+                .setExpiration(new Date(System.currentTimeMillis() + expirationMs))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
 
-    public String extraerEmail(String token) {
-        return parsear(token).getBody().getSubject();
-    }
-
-    public String extraerRol(String token) {
-        return (String) parsear(token).getBody().get("rol");
-    }
-
-    public boolean esValido(String token) {
+    public boolean validateToken(String token, String email) {
         try {
-            parsear(token);
+            String extracted = extractEmail(token);
+            return extracted.equals(email) && !isExpired(token);
+        } catch (JwtException | IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    public String extractEmail(String token) {
+        return parseClaims(token).getBody().getSubject();
+    }
+
+    public String extractRole(String token) {
+        return (String) parseClaims(token).getBody().get("rol");
+    }
+
+    public boolean isValid(String token) {
+        try {
+            parseClaims(token);
             return true;
         } catch (JwtException | IllegalArgumentException e) {
             return false;
         }
     }
 
-    private Jws<Claims> parsear(String token) {
+    private boolean isExpired(String token) {
+        return parseClaims(token).getBody().getExpiration().before(new Date());
+    }
+
+    private Jws<Claims> parseClaims(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token);
     }
 }
