@@ -49,7 +49,9 @@ public class DisponibilidadService {
                     dto.setHoraFin(t.getHoraFin());
                     boolean reservado = reservasByTurnoId.containsKey(t.getId());
                     dto.setReservado(reservado);
-                    if (reservado) dto.setReservaId(reservasByTurnoId.get(t.getId()));
+                    if (reservado) {
+                        dto.setReservaId(reservasByTurnoId.get(t.getId()));
+                    }
                     return dto;
                 })
                 .collect(Collectors.toList());

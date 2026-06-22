@@ -20,7 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import jakarta.annotation.PostConstruct;
-import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Map;
@@ -99,11 +98,17 @@ public class PagoService {
 
     @Transactional
     public void procesarWebhook(Map<String, Object> payload, String xSignature) {
-        if (payload == null) return;
+        if (payload == null) {
+            return;
+        }
         Object dataObj = payload.get("data");
-        if (!(dataObj instanceof Map<?, ?> data)) return;
+        if (!(dataObj instanceof Map<?, ?> data)) {
+            return;
+        }
         Object idObj = data.get("id");
-        if (idObj == null) return;
+        if (idObj == null) {
+            return;
+        }
 
         String referenciaExterna = String.valueOf(idObj);
         pagoRepository.findByReferenciaExterna(referenciaExterna).ifPresent(pago -> {
@@ -112,8 +117,10 @@ public class PagoService {
                 pago.setEstado(EstadoPago.APROBADO);
             } else if ("rejected".equals(status)) {
                 pago.setEstado(EstadoPago.RECHAZADO);
-            } else if ("pending".equals(status) || "in_process".equals(status)) {
-                pago.setEstado(EstadoPago.PENDIENTE);
+            } else {
+                if ("pending".equals(status) || "in_process".equals(status)) {
+                    pago.setEstado(EstadoPago.PENDIENTE);
+                }
             }
             pago.setFechaTransaccion(new Timestamp(System.currentTimeMillis()));
             pagoRepository.save(pago);
